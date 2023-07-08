@@ -8,7 +8,16 @@
     --neutral-light-grayish-blue: rgb(243, 248, 255);
     --neutral-white: rgb(255, 255, 255);
     --neutral-black-opacity-75: rgb(0, 0, 0);
+    --gray: rgba(105, 112, 125, 1);
     --font-Kumbh: 'Kumbh Sans', sans-serif;
+    --size-26px: 1.625rem;
+    --size-16px: 1rem;
+    --size-15px: 0.938rem;
+    --size-10px: 0.625rem;
+    --weight-700: 700;
+    --weight-400: 400;
+    --weight-normal: normal;
+
 }
 
 * {
@@ -17,4 +26,16 @@
     box-sizing: border-box;
     font-family: var(--font-Kumbh);
     font-style: normal;
+}
+
+@media (min-width: 1024px) {
+
+    main {
+        padding: 28px 165px 132px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+
 }

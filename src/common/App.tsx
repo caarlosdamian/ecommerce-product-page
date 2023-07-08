@@ -1,7 +1,13 @@
-import styles from './main';
+import { Header } from "../components";
 
-function App() {
-  return <></>;
-}
+const App = () => {
+  return (
+    <main>
+     <Header/>
+      <aside>Sidebar</aside>
+      <section>MainPage</section>
+    </main>
+  );
+};
 
 export default App;
