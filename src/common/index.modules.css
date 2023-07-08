@@ -1,0 +1,20 @@
+:root {
+    --primary-orange: rgb(243, 114, 29);
+    --primary-pale-orange: rgb(250, 237, 214);
+
+    --neutral-very-dark-blue: rgb(17, 17, 17);
+    --neutral-dark-grayish-blue: rgb(56, 67, 86);
+    --neutral-grayish-blue: rgb(177, 188, 209);
+    --neutral-light-grayish-blue: rgb(243, 248, 255);
+    --neutral-white: rgb(255, 255, 255);
+    --neutral-black-opacity-75: rgb(0, 0, 0);
+    --font-Kumbh: 'Kumbh Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-Kumbh);
+    font-style: normal;
+}
