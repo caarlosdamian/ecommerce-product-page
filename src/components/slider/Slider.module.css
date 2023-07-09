@@ -1,6 +1,7 @@
 
 .slider {
     position: relative;
+    z-index: 1;
 }
 
 .arrow__container {

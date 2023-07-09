@@ -1,5 +1,6 @@
 import { Content, Header, Sidebar } from '../components';
 import { SidebarProvider } from '../context/sidebarContext';
+import { productInfo } from '../utils/contentUtil';
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
         <Header />
         <Sidebar />
       </SidebarProvider>
-      <Content />
+      <Content product={productInfo} />
     </main>
   );
 };

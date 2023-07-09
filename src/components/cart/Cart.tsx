@@ -1,4 +1,5 @@
 import { deleteIcon, thumbnail1 } from '../../assets';
+import { Button } from '../button/Button';
 import styles from './Cart.module.css';
 
 export const Cart = () => {
@@ -19,7 +20,7 @@ export const Cart = () => {
           </section>
           <img src={deleteIcon} alt="deleteIcon" className={styles.delete} />
         </section>
-        <button className={styles.button}>Checkout</button>
+        <Button>Checkout</Button>
       </section>
     </section>
   );
