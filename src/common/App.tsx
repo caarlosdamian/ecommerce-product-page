@@ -1,4 +1,4 @@
-import { Header, Sidebar } from '../components';
+import { Content, Header, Sidebar } from '../components';
 import { SidebarProvider } from '../context/sidebarContext';
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
         <Header />
         <Sidebar />
       </SidebarProvider>
-      <section>MainPage</section>
+      <Content />
     </main>
   );
 };

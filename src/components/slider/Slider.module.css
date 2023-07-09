@@ -1,0 +1,37 @@
+
+.slider {
+    position: relative;
+}
+
+.arrow__container {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 130px;
+    cursor: pointer;
+
+}
+
+.arrow__container img {
+    width: 10px;
+    object-fit: cover;
+}
+
+.arrow__container:first-of-type {
+    left: 16px;
+}
+
+.arrow__container:last-of-type {
+    right: 16px;
+}
+
+.product {
+    width: 375px;
+    height: 300px;
+    object-fit: cover;
+}
