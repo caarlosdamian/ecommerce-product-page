@@ -1,10 +1,13 @@
-import { Header } from "../components";
+import { Header, Sidebar } from '../components';
+import { SidebarProvider } from '../context/sidebarContext';
 
 const App = () => {
   return (
     <main>
-     <Header/>
-      <aside>Sidebar</aside>
+      <SidebarProvider>
+        <Header />
+        <Sidebar />
+      </SidebarProvider>
       <section>MainPage</section>
     </main>
   );

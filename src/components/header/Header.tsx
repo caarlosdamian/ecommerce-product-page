@@ -1,12 +1,15 @@
 import styles from './Header.module.css';
 import { avatar, cart, hamburger, logo } from '../../assets';
 import { categoriesInfo } from '../../utils/headerUtils';
+import { useSidebarContext } from '../../context/sidebarContext';
 
 export const Header = () => {
+  const { handleToggle } = useSidebarContext();
+
   return (
     <section className={styles.container}>
       <div className={styles.container__left}>
-        <img src={hamburger} alt="hamburger-menu" className={styles.menu} />
+        <img src={hamburger} alt="hamburger-menu" className={styles.menu} onClick={handleToggle} />
         <img src={logo} alt="logo" className={styles.logo} />
         <ul className={styles.categories}>
           {categoriesInfo.map((category) => (

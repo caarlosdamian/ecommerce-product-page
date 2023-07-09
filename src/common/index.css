@@ -28,6 +28,18 @@
     font-style: normal;
 }
 
+.overlay {
+    opacity: 0.75;
+    background: #000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
 @media (min-width: 1024px) {
 
     main {
@@ -36,6 +48,7 @@
         align-items: center;
         flex-direction: column;
         width: 100vw;
+        position: relative;
     }
 
 }
