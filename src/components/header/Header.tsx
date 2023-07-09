@@ -5,7 +5,11 @@ import { Cart } from '..';
 import styles from './Header.module.css';
 
 export const Header = () => {
-  const { handleSidebarToggle } = useSidebarContext();
+  const {
+    handleSidebarToggle,
+    handleCartToggle,
+    state: { cart: showCart },
+  } = useSidebarContext();
 
   return (
     <section className={styles.container}>
@@ -29,11 +33,16 @@ export const Header = () => {
       <div className={styles.container__right}>
         <div className={styles.cart}>
           <div className={styles.cart__badge}>3</div>
-          <img src={cart} alt="logo" className={styles.cart__img} />
+          <img
+            src={cart}
+            alt="logo"
+            className={styles.cart__img}
+            onClick={handleCartToggle}
+          />
         </div>
         <img src={avatar} alt="avatar" className={styles.avatar} />
       </div>
-      <Cart />
+      {showCart && <Cart />}
     </section>
   );
 };

@@ -17,10 +17,12 @@ interface SidebarState {
 interface SidebarContextValue {
   state: SidebarState;
   handleSidebarToggle: () => void;
+  handleCartToggle: () => void;
 }
 
 export const SidebarContext = createContext<SidebarContextValue>({
   handleSidebarToggle: () => undefined,
+  handleCartToggle: () => undefined,
   state: {
     sidebar: false,
     cart: false,
@@ -50,10 +52,14 @@ export const SidebarProvider = (props: any) => {
     () => dispatch({ type: 'SIDEBAR' }),
     []
   );
+  const handleCartToggle = useCallback(
+    () => dispatch({ type: 'CART' }),
+    []
+  );
 
   const value = useMemo(
-    () => ({ state, handleSidebarToggle }),
-    [state, handleSidebarToggle]
+    () => ({ state, handleSidebarToggle, handleCartToggle }),
+    [state, handleSidebarToggle,handleCartToggle]
   );
   return <SidebarContext.Provider value={value} {...props} />;
 };
