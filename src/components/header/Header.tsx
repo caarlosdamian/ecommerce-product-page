@@ -2,6 +2,7 @@ import styles from './Header.module.css';
 import { avatar, cart, hamburger, logo } from '../../assets';
 import { categoriesInfo } from '../../utils/headerUtils';
 import { useSidebarContext } from '../../context/sidebarContext';
+import { Cart } from '..';
 
 export const Header = () => {
   const { handleToggle } = useSidebarContext();
@@ -27,6 +28,7 @@ export const Header = () => {
         </div>
         <img src={avatar} alt="avatar" className={styles.avatar} />
       </div>
+      <Cart/>
     </section>
   );
 };
