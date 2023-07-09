@@ -1,41 +1,59 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
+import { createContext, useCallback, useMemo, useReducer } from 'react';
+
+const ActionTypes = {
+  SIDEBAR: 'SIDEBAR',
+  CART: 'CART',
+} as const;
+
+type Action =
+  | { type: typeof ActionTypes.SIDEBAR }
+  | { type: typeof ActionTypes.CART };
+
+interface SidebarState {
+  sidebar: boolean;
+  cart: boolean;
+}
 
 interface SidebarContextValue {
-    show: boolean;
-    setShow: (show: boolean) => void;
-    handleToggle: () => void;
-  }
+  state: SidebarState;
+  handleSidebarToggle: () => void;
+}
 
 export const SidebarContext = createContext<SidebarContextValue>({
-  handleToggle: () => {},
-  setShow: () => {},
-  show: false,
+  handleSidebarToggle: () => undefined,
+  state: {
+    sidebar: false,
+    cart: false,
+  },
 });
 
-export const SidebarProvider = (props: any) => {
-  const [show, setShow] = useState(false);
-  const handleToggle = useCallback(() => setShow(!show), [show]);
+const toggleReducer = (state: SidebarState, action: Action) => {
+  switch (action.type) {
+    case 'CART':
+      return { ...state, cart: !state.cart };
+    case 'SIDEBAR':
+      return { ...state, sidebar: !state.sidebar };
+    default:
+      break;
+  }
 
-  const value = useMemo(
-    () => ({ show, setShow, handleToggle }),
-    [show, handleToggle]
-  );
-  return <SidebarContext.Provider value={value} {...props} />;
+  return state;
 };
 
-export const useSidebarContext = () => {
-  const context = useContext(SidebarContext);
-  if (!context) {
-    throw new Error(
-      'useSidebarContext should be use only under SidebarProvider'
-    );
-  }
-  return context;
+export const SidebarProvider = (props: any) => {
+  const [state, dispatch] = useReducer(toggleReducer, {
+    sidebar: false,
+    cart: false,
+  });
+
+  const handleSidebarToggle = useCallback(
+    () => dispatch({ type: 'SIDEBAR' }),
+    []
+  );
+
+  const value = useMemo(
+    () => ({ state, handleSidebarToggle }),
+    [state, handleSidebarToggle]
+  );
+  return <SidebarContext.Provider value={value} {...props} />;
 };

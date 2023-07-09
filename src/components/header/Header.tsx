@@ -1,16 +1,21 @@
-import styles from './Header.module.css';
 import { avatar, cart, hamburger, logo } from '../../assets';
 import { categoriesInfo } from '../../utils/headerUtils';
-import { useSidebarContext } from '../../context/sidebarContext';
+import { useSidebarContext } from '../../hooks';
 import { Cart } from '..';
+import styles from './Header.module.css';
 
 export const Header = () => {
-  const { handleToggle } = useSidebarContext();
+  const { handleSidebarToggle } = useSidebarContext();
 
   return (
     <section className={styles.container}>
       <div className={styles.container__left}>
-        <img src={hamburger} alt="hamburger-menu" className={styles.menu} onClick={handleToggle} />
+        <img
+          src={hamburger}
+          alt="hamburger-menu"
+          className={styles.menu}
+          onClick={handleSidebarToggle}
+        />
         <img src={logo} alt="logo" className={styles.logo} />
         <ul className={styles.categories}>
           {categoriesInfo.map((category) => (
@@ -28,7 +33,7 @@ export const Header = () => {
         </div>
         <img src={avatar} alt="avatar" className={styles.avatar} />
       </div>
-      <Cart/>
+      <Cart />
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { Cart, Header, Sidebar } from '../components';
+import { Header, Sidebar } from '../components';
 import { SidebarProvider } from '../context/sidebarContext';
 
 const App = () => {
