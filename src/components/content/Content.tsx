@@ -4,9 +4,11 @@ import { imgArray } from '../../utils/contentUtil';
 import { Button } from '../button/Button';
 import { Slider } from '../slider/Slider';
 import styles from './Content.module.css';
+import { useQuantity } from '../../hooks';
 
 export const Content = ({ product }: { product: Product }) => {
   const { actualPrice, desc, discount, id, price, title } = product;
+  const { handleQuantity, quantity } = useQuantity();
   return (
     <section className={styles.container}>
       <Slider imgs={imgArray} />
@@ -22,11 +24,13 @@ export const Content = ({ product }: { product: Product }) => {
           <p className={styles.actual__price}>${actualPrice}</p>
         </section>
         <section className={styles.controls}>
-          <img src={minus} alt="minus" />
-          <p className={styles.controls__amount}>3</p>
-          <img src={plus} alt="plus" />
+          <img src={minus} alt="minus" onClick={() => handleQuantity()} />
+          <p className={styles.controls__amount}>{quantity}</p>
+          <img src={plus} alt="plus" onClick={() => handleQuantity('add')} />
         </section>
-        <Button style={{boxShadow:'0px 20px 50px -20px #FF7E1B'}}>Add to cart</Button>
+        <Button style={{ boxShadow: '0px 20px 50px -20px #FF7E1B' }}>
+          Add to cart
+        </Button>
       </section>
     </section>
   );
