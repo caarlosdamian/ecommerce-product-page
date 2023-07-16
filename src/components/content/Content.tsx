@@ -3,12 +3,13 @@ import { Product } from '../../interfaces/contentInterfaces';
 import { imgArray } from '../../utils/contentUtil';
 import { Button } from '../button/Button';
 import { Slider } from '../slider/Slider';
+import { useCartContext, useQuantity } from '../../hooks';
 import styles from './Content.module.css';
-import { useQuantity } from '../../hooks';
 
 export const Content = ({ product }: { product: Product }) => {
   const { actualPrice, desc, discount, id, price, title } = product;
   const { handleQuantity, quantity } = useQuantity();
+  const { AddItem } = useCartContext();
   return (
     <section className={styles.container}>
       <Slider imgs={imgArray} />
@@ -28,7 +29,10 @@ export const Content = ({ product }: { product: Product }) => {
           <p className={styles.controls__amount}>{quantity}</p>
           <img src={plus} alt="plus" onClick={() => handleQuantity('add')} />
         </section>
-        <Button style={{ boxShadow: '0px 20px 50px -20px #FF7E1B' }}>
+        <Button
+          style={{ boxShadow: '0px 20px 50px -20px #FF7E1B' }}
+          onClick={() => AddItem(product, quantity)}
+        >
           Add to cart
         </Button>
       </section>
