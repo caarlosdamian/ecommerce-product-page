@@ -10,7 +10,7 @@ import { useSlide } from '../../hooks/useSlide';
 import styles from './Content.module.css';
 
 export const Content = ({ product }: { product: Product }) => {
-  const { actualPrice, desc, discount, id, price, title } = product;
+  const { actualPrice, desc, discount, price, title } = product;
   const { handleQuantity, quantity } = useQuantity();
   const { AddItem } = useCartContext();
   const { handleImgChange, viewImg } = useSlide(imgArray);

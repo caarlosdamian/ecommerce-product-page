@@ -1,4 +1,3 @@
-import React from 'react';
 import { DesktopSlider } from '..';
 import { Overlay } from '../overlay/Overlay';
 import { useSidebarContext } from '../../hooks';
