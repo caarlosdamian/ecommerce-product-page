@@ -14,7 +14,7 @@
 }
 
 .content {
-    background: #FFF;
+    background: var(--neutral-white);
     width: 250px;
     z-index: 3;
     display: flex;
@@ -35,9 +35,9 @@
 }
 
 .category {
-    color: #1D2026;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 26px;
+    color: var(--neutral-blue);
+    font-size: var(--size-18px);
+    font-weight: var(--weight-700);
+    line-height: var(--line-26px);
     cursor: pointer;
 }

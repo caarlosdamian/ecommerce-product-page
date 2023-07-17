@@ -3,6 +3,7 @@
     --primary-pale-orange: rgb(250, 237, 214);
 
     --neutral-very-dark-blue: rgb(17, 17, 17);
+    --neutral-blue: #1D2026;
     --neutral-dark-grayish-blue: rgb(56, 67, 86);
     --neutral-grayish-blue: rgb(177, 188, 209);
     --neutral-light-grayish-blue: rgb(243, 248, 255);
@@ -11,13 +12,14 @@
     --gray: rgba(105, 112, 125, 1);
     --font-Kumbh: 'Kumbh Sans', sans-serif;
     --size-26px: 1.625rem;
+    --size-18px: 1.125rem;
     --size-16px: 1rem;
     --size-15px: 0.938rem;
     --size-10px: 0.625rem;
+    --line-26px: 1.625rem;
     --weight-700: 700;
     --weight-400: 400;
     --weight-normal: normal;
-
 }
 
 * {

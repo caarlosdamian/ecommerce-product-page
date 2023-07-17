@@ -42,7 +42,7 @@
 }
 
 .category:hover {
-    color: #1D2026;
+    color: var(--neutral-blue);
     border-bottom: 2px solid var(--primary-orange);
 }
 

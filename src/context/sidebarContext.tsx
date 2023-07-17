@@ -1,6 +1,6 @@
 import { createContext, useCallback, useMemo, useReducer } from 'react';
 
-const ActionTypes = {
+export const ActionTypes = {
   SIDEBAR: 'SIDEBAR',
   CART: 'CART',
   SLIDER: 'SLIDER',

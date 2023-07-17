@@ -3,9 +3,9 @@ import { ActionTypes } from '../../hooks/useSlide';
 import styles from './Slider.module.css';
 
 interface Props {
-  handleImgChange: any;
-  viewImg: any;
-  imgs: any[];
+  handleImgChange:(type: any) => void
+  viewImg: number;
+  imgs: string[];
   className?: string;
 }
 
@@ -15,7 +15,6 @@ export const Slider = ({
   imgs,
   className = '',
 }: Props) => {
-
   return (
     <section className={`${styles.slider} ${styles[`${className}`]}`}>
       <section

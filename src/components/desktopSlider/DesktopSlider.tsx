@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styles from './DesktopSlider.module.css';
 import { Slider } from '../slider/Slider';
 import { useSlide } from '../../hooks/useSlide';
@@ -7,11 +7,11 @@ import { useSidebarContext } from '../../hooks';
 export const DesktopSlider = ({
   imgs,
   clasName = '',
-  hidde = ''
+  hidde = '',
 }: {
   imgs: string[];
   clasName?: string;
-  hidde?:string
+  hidde?: string;
 }) => {
   const [selectedImg, setSelectedImg] = useState(imgs[0]);
   const { handleImgChange, viewImg } = useSlide(imgs);
@@ -21,14 +21,22 @@ export const DesktopSlider = ({
     setSelectedImg(imgs[viewImg]);
   }, [imgs, viewImg]);
 
+  const indexImg = useMemo(
+    () => imgs.findIndex((elem) => selectedImg === elem),
+    [selectedImg, imgs]
+  );
   return (
-    <div className={`${styles.container} ${styles[`${clasName}`]}  ${styles[`${hidde}`]}`}>
-      <div className={styles.wrapper__img} >
+    <div
+      className={`${styles.container} ${styles[`${clasName}`]}  ${
+        styles[`${hidde}`]
+      }`}
+    >
+      <div className={styles.wrapper__img}>
         {clasName ? (
           <Slider
             imgs={imgs}
             handleImgChange={handleImgChange}
-            viewImg={viewImg}
+            viewImg={indexImg}
           />
         ) : (
           <img

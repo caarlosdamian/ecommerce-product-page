@@ -13,18 +13,18 @@
 }
 
 .info__header {
-    color: #FF7E1B;
+    color: var(--primary-orange);
     font-size: 12px;
-    font-weight: 700;
+    font-weight: var(--weight-700);
     line-height: normal;
     letter-spacing: 1.846px;
     text-transform: uppercase;
 }
 
 .info__title {
-    color: #1D2026;
+    color: var(--neutral-blue);
     font-size: 28px;
-    font-weight: 700;
+    font-weight: var(--weight-700);
     line-height: 32px;
 }
 
@@ -50,9 +50,9 @@
 }
 
 .price>p {
-    color: #1D2026;
+    color: var(--neutral-blue);
     font-size: 28px;
-    font-weight: 700;
+    font-weight: var(--weight-700);
     line-height: normal;
 }
 
@@ -60,17 +60,17 @@
     border-radius: 6px;
     background: #FFEEE2;
     padding: 8px;
-    color: #FF7E1B;
+    color: var(--primary-orange);
     font-size: 16px;
-    font-weight: 700;
+    font-weight: var(--weight-700);
     line-height: normal;
 }
 
 .actual__price {
     color: #B6BCC8;
     font-size: 16px;
-    font-weight: 700;
-    line-height: 26px;
+    font-weight: var(--weight-700);
+    line-height: var(--line-26px);
     text-decoration: line-through;
 }
 

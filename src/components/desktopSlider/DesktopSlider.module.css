@@ -17,7 +17,7 @@
     border-radius: 15px;
     width: 445px;
     height: 445px;
-    cursor: pointer;
+    cursor: zoom-in;
 }
 
 .wrapper__thump {
@@ -36,24 +36,23 @@
 }
 
 .secondary:hover {
-    opacity: .6;
+    opacity: .8;
 
 }
 
 .selected {
-    border: 2px solid #FF7E1B;
-    opacity: .6;
+    border: 2px solid var(--primary-orange);
+    opacity: .8;
 }
 
 .hidde {
     display: none;
 }
 
-
 @media (min-width: 1024px) {
 
     .hidde {
         display: flex;
     }
-    
+
 }
