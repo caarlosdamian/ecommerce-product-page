@@ -10,8 +10,8 @@ const App = () => {
         <SidebarProvider>
           <Header />
           <Sidebar />
+          <Content product={productInfo} />
         </SidebarProvider>
-        <Content product={productInfo} />
       </CartProvider>
     </main>
   );

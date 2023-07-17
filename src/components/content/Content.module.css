@@ -74,6 +74,12 @@
     text-decoration: line-through;
 }
 
+.controls__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .controls {
     border-radius: 10px;
     background: #F6F8FD;
@@ -84,3 +90,33 @@
     justify-content: space-between;
 }
 
+@media (min-width: 1024px) {
+
+    .container {
+        flex-direction: row;
+        max-width: 1015px;
+        padding-top: 90px;
+        gap: 125px;
+    }
+
+    .controls__wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .controls {
+        width: 157px;
+        height: 56px;
+        padding: 22px 16px;
+    }
+
+    .info__price {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info__title {
+        font-size: 44px;
+        line-height: 48px;
+    }
+}

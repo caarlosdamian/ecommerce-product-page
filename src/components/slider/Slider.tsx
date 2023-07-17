@@ -1,12 +1,23 @@
 import { next, previus } from '../../assets';
-import { ActionTypes, useSlide } from '../../hooks/useSlide';
+import { ActionTypes } from '../../hooks/useSlide';
 import styles from './Slider.module.css';
 
-export const Slider = ({ imgs = [] }: { imgs: string[] }) => {
-  const { handleImgChange, viewImg } = useSlide(imgs);
+interface Props {
+  handleImgChange: any;
+  viewImg: any;
+  imgs: any[];
+  className?: string;
+}
+
+export const Slider = ({
+  handleImgChange,
+  viewImg,
+  imgs,
+  className = '',
+}: Props) => {
 
   return (
-    <section className={styles.slider}>
+    <section className={`${styles.slider} ${styles[`${className}`]}`}>
       <section
         className={styles.arrow__container}
         onClick={() => handleImgChange(ActionTypes.DECRESE)}
@@ -16,7 +27,7 @@ export const Slider = ({ imgs = [] }: { imgs: string[] }) => {
       <img src={imgs[viewImg]} alt="product" className={styles.product} />
       <section
         className={styles.arrow__container}
-        onClick={() => handleImgChange(ActionTypes.DECRESE)}
+        onClick={() => handleImgChange(ActionTypes.INCRESE)}
       >
         <img src={next} alt="next" className={styles.next} />
       </section>
